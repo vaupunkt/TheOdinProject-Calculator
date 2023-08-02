@@ -135,3 +135,26 @@ decimalButton.addEventListener("click", () => {
 		updateDisplay(".");
 	}
 });
+
+window.addEventListener("keydown", (event) => {
+	if (event.key >= "0" && event.key <= "9") {
+		updateDisplay(event.key);
+	} else if (event.key === ".") {
+		if (!displayValue.includes(".")) {
+			updateDisplay(".");
+		}
+	} else if (event.key === "+") {
+		addButton.click();
+	} else if (event.key === "-") {
+		subtractButton.click();
+	} else if (event.key === "*") {
+		multiplyButton.click();
+	} else if (event.key === "/") {
+		event.preventDefault();
+		divideButton.click();
+	} else if (event.key === "Enter") {
+		equalButton.click();
+	} else if (event.key === "Backspace") {
+		clearButton.click();
+	}
+});

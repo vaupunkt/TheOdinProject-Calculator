@@ -13,6 +13,12 @@ main {
 	margin: auto;
 }
 
+h1 {
+	grid-column: 1 / 5;
+	grid-row: 1 / 2;
+	text-align: center;
+}
+
 .operator {
 	background-color: lightblue;
 }

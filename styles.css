@@ -1,0 +1,119 @@
+body {
+	box-sizing: border-box;
+	font-family: "Roboto", sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+main {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(6, 1fr);
+	width: 400px;
+	margin: auto;
+}
+
+.operator {
+	background-color: lightblue;
+}
+.number {
+	background-color: lightgreen;
+}
+
+#display {
+	grid-column: 1 / 5;
+	grid-row: 1 / 2;
+	background-color: #000;
+	color: #fff;
+	height: 3rem;
+	text-align: right;
+	font-family: monospace;
+}
+
+#calculationDisplay  {
+	font-size: 1rem;
+}
+
+#result {
+	font-size: 2em;
+}
+
+#equals {
+	grid-column: 4 / 5;
+	grid-row: 4 / 7;
+}
+
+#one {
+	grid-column: 1 / 2;
+	grid-row: 5 / 6;
+}
+
+#two {
+	grid-column: 2 / 3;
+	grid-row: 5 / 6;
+}
+
+#three {
+	grid-column: 3 / 4;
+	grid-row: 5 / 6;
+}
+
+#four {
+	grid-column: 1 / 2;
+	grid-row: 4 / 5;
+}
+
+#five {
+	grid-column: 2 / 3;
+	grid-row: 4 / 5;
+}
+
+#six {
+	grid-column: 3 / 4;
+	grid-row: 4 / 5;
+}
+
+#seven {
+	grid-column: 1 / 2;
+	grid-row: 3 / 4;
+}
+
+#eight {
+	grid-column: 2 / 3;
+	grid-row: 3 / 4;
+}
+
+#nine {
+	grid-column: 3 / 4;
+	grid-row: 3 / 4;
+}
+
+#zero {
+	grid-column: 1 / 3;
+	grid-row: 6 / 7;
+}
+
+#decimal {
+	grid-column: 3 / 4;
+	grid-row: 6 / 7;
+}
+
+#add {
+	grid-column: 4 / 5;
+	grid-row: 3 / 4;
+}
+
+#subtract {
+	grid-column: 4 / 5;
+	grid-row: 2 / 3;
+}
+
+#clear {
+	grid-column: 1 / 2;
+	grid-row: 2 / 3;
+}
+
+#multiply {
+	grid-column: 3 / 4;
+	grid-row: 2 / 3;
+}

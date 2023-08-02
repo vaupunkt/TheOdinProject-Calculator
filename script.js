@@ -47,7 +47,11 @@ function operate(operator, a, b) {
 		case "*":
 			return multiply(a, b);
 		case "/":
-			return divide(a, b);
+			if (b === 0) {
+				return "Error: Cannot divide by 0";
+			} else {
+				return divide(a, b);
+			}
 		default:
 			return;
 	}
@@ -72,7 +76,7 @@ subtractButton.addEventListener("click", () => {
 		result = Number(displayValue);
 	}
 	operator = "-";
-	calculationDisplay.textContent = `${firstNumber} ${operator}`;
+	calculationDisplay.textContent = `${result} ${operator}`;
 	displayValue = "";
 	resultDisplay.textContent = displayValue;
 });
@@ -84,7 +88,7 @@ multiplyButton.addEventListener("click", () => {
 		result = Number(displayValue);
 	}
 	operator = "*";
-	calculationDisplay.textContent = `${firstNumber} ${operator}`;
+	calculationDisplay.textContent = `${result} ${operator}`;
 	displayValue = "";
 	resultDisplay.textContent = displayValue;
 });
@@ -96,16 +100,23 @@ divideButton.addEventListener("click", () => {
 		result = Number(displayValue);
 	}
 	operator = "/";
-	calculationDisplay.textContent = `${firstNumber} ${operator}`;
+	calculationDisplay.textContent = `${result} ${operator}`;
 	displayValue = "";
 	resultDisplay.textContent = displayValue;
 });
 
 equalButton.addEventListener("click", () => {
-	result = operate(operator, result, Number(displayValue));
-	result = Math.round(result * 100) / 100;
-	displayValue = result.toString();
-	resultDisplay.textContent = displayValue;
+	secondNumber = Number(displayValue);
+	result = operate(operator, result, secondNumber);
+	if (typeof result === "string" && result.startsWith("Error:")) {
+		displayValue = result;
+		resultDisplay.textContent = displayValue;
+	} else {
+		result = Math.round(result * 100) / 100;
+		displayValue = result.toString();
+		resultDisplay.textContent = displayValue;
+	}
+	result = "";
 });
 
 clearButton.addEventListener("click", () => {
@@ -113,6 +124,8 @@ clearButton.addEventListener("click", () => {
 	firstNumber = "";
 	operator = "";
 	secondNumber = "";
+	result = "";
+	calculationDisplay.textContent = "";
 	resultDisplay.textContent = displayValue;
 });
 
